@@ -21,6 +21,7 @@ import { v4 as uuid } from 'uuid';
 import { GoogleTagManager, sendGTMEvent } from "@next/third-parties/google"
 import { getCurrentDate, getCurrentTime, backend, statSheetId, extractBaseTitle, userIdName, clientInfoName, sendMetaCapi, hashValue } from "@/config/utils";
 import { getDevice, getItem, getOS, setItem, Cache, notify, getFacebookCookies } from "@/config/clientUtils";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 /**
  * @title Layout Component
@@ -231,6 +232,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           
           {/* <GoogleAnalytics /> */}
       {/* </Head> */}
+      <SpeedInsights />
       <GoogleTagManager gtmId={containerId} />
       <body suppressHydrationWarning={true} className={styles.body}>
         {/* Add GTM noscript */}
