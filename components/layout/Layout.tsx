@@ -232,7 +232,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           
           {/* <GoogleAnalytics /> */}
       {/* </Head> */}
-      <SpeedInsights />
       <GoogleTagManager gtmId={containerId} />
       <body suppressHydrationWarning={true} className={styles.body}>
         {/* Add GTM noscript */}
@@ -245,11 +244,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           ></iframe>
         </noscript> */}
         <ToastContainer autoClose={8000} limit={5} newestOnTop={true} />
-       {/* {mounted && <ToastContainer autoClose={8000} limit={5} newestOnTop={true} />} */}
+        {/* {mounted && <ToastContainer autoClose={8000} limit={5} newestOnTop={true} />} */}
         <Header />
         <Modal />
           <main className='container'>{children}</main>
         {/* <Footer /> */}
+        <SpeedInsights />
       </body>
     </html>
   );
